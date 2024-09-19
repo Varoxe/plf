@@ -1,2 +1,2 @@
 # plf
-Programming Language Finder
+Programming Language Finder by Varoxe
