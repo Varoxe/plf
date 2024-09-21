@@ -14,11 +14,9 @@ class LanguageFinderApp:
         style.configure("TButton", font=("Segoe UI", 12), padding=6, relief="flat", foreground="white", background="#3b3b4d")
         style.map("TButton", background=[('active', '#575766')])
         style.configure("TLabel", font=("Segoe UI", 12), foreground="white", background="#1e1e2e")
+        style.configure("Blue.TButton", font=("Segoe UI", 12), padding=6, relief="flat", foreground="white", background="#1e1e2e")
+        style.map("Blue.TButton", background=[('active', '#3b3b4d')])
 
-        # Frame für den Titel
-        title_frame = tk.Frame(root, bg="#1e1e2e")
-        title_frame.pack(pady=10)
-        
         # Rahmen für das Layout
         frame = tk.Frame(root, bg="#1e1e2e")
         frame.pack(expand=True, fill=tk.BOTH, padx=20, pady=20)
@@ -42,10 +40,6 @@ class LanguageFinderApp:
             rb = tk.Radiobutton(frame, text="", variable=self.answer_var, value=str(i), font=("Segoe UI", 12), fg="white", bg="#1e1e2e", selectcolor="#3b3b4d")
             rb.pack(anchor="w")
             self.radio_buttons.append(rb)
-
-        # Stil für den Button konfigurieren
-        style.configure("Blue.TButton", font=("Segoe UI", 12), padding=6, relief="flat", foreground="blue", background="grey")
-        style.map("Blue.TButton", background=[('active', '#3b3b4d')])
 
         # Button zum Absenden der Antwort
         self.submit_button = ttk.Button(frame, text="Submit", style="Blue.TButton", command=self.submit_response)
@@ -168,6 +162,7 @@ class LanguageFinderApp:
             "Ruby": 0
         }
 
+        # Antworten analysieren und Punkte vergeben
         for response in self.responses:
             if response == "a) Web development":
                 scores["JavaScript"] += 1
@@ -359,7 +354,7 @@ class LanguageFinderApp:
             "Ruby": ("Ruby is known for its simplicity and productivity, often used in web development with the Ruby on Rails framework.", "https://www.ruby-lang.org/")
         }
         return info.get(language, ("Information not available", ""))
-    
+
     def language(self):
         return {
             "Python": "Creating websites, Creating games, Creating mobile apps, Creating desktop apps, Creating AI, Creating automation programs",
