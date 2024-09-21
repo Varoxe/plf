@@ -1,3 +1,4 @@
+<img src="PLFpic.jpg" alt="PLF-Logo" style="width: 30%; border: 1px solid #ccc; padding: 5px;">
 <h1>PLF - Programming Language Finder by <strong>Varoxe</strong></h1>
 
 <p>
