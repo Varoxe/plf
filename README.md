@@ -1,6 +1,4 @@
-# plf
-Programming Language Finder by Varoxe
-<h1>PLF - Programming Language Finder</h1>
+<h1>PLF - Programming Language Finder by <strong>Varoxe</strong></h1>
 
 <p>
 The <strong>Programming Language Finder (PLF)</strong> is a simple desktop application developed with Python and Tkinter to help users determine the best programming language to learn based on their interests. The app asks users a series of questions and recommends the right language for different fields like web development, game development, mobile apps, AI, and more.
