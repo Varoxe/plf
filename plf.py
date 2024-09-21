@@ -44,8 +44,8 @@ class LanguageFinderApp:
             self.radio_buttons.append(rb)
 
         # Stil für den Button konfigurieren
-        style.configure("Blue.TButton", font=("Segoe UI", 12), padding=6, relief="flat", foreground="white", background="#007acc")
-        style.map("Blue.TButton", background=[('active', '#005f99')])
+        style.configure("Blue.TButton", font=("Segoe UI", 12), padding=6, relief="flat", foreground="black", background="blue")
+        style.map("Blue.TButton", background=[('active', 'blue')])
 
         # Button zum Absenden der Antwort
         self.submit_button = ttk.Button(frame, text="Submit", style="Blue.TButton", command=self.submit_response)
@@ -145,7 +145,7 @@ class LanguageFinderApp:
             self.question_label.config(text=question)
             for i, option in enumerate(options):
                 self.radio_buttons[i].config(text=option, value=option)
-            self.answer_var.set(None)  # Clear the selection
+            self.answer_var.set(None)
         else:
             recommended_language, language_info = self.evaluate_responses()
             self.result_label.config(text=f"Thank you for completing the survey! \nWe recommend you to learn {recommended_language}.\n\n{language_info[0]}\n\nFor more information, visit: {language_info[1]}")
@@ -160,7 +160,6 @@ class LanguageFinderApp:
             messagebox.showwarning("Warning", "Please select an answer before proceeding.")
 
     def evaluate_responses(self):
-        # Punkteliste für jede Programmiersprache
         scores = {
             "Python": 0,
             "JavaScript": 0,
@@ -169,7 +168,6 @@ class LanguageFinderApp:
             "Ruby": 0
         }
 
-        # Antworten analysieren und Punkte vergeben
         for response in self.responses:
             if response == "a) Web development":
                 scores["JavaScript"] += 1
@@ -361,7 +359,7 @@ class LanguageFinderApp:
             "Ruby": ("Ruby is known for its simplicity and productivity, often used in web development with the Ruby on Rails framework.", "https://www.ruby-lang.org/")
         }
         return info.get(language, ("Information not available", ""))
-
+    
     def language(self):
         return {
             "Python": "Creating websites, Creating games, Creating mobile apps, Creating desktop apps, Creating AI, Creating automation programs",
