@@ -44,8 +44,8 @@ class LanguageFinderApp:
             self.radio_buttons.append(rb)
 
         # Stil für den Button konfigurieren
-        style.configure("Blue.TButton", font=("Segoe UI", 12), padding=6, relief="flat", foreground="black", background="blue")
-        style.map("Blue.TButton", background=[('active', 'blue')])
+        style.configure("Blue.TButton", font=("Segoe UI", 12), padding=6, relief="flat", foreground="blue", background="grey")
+        style.map("Blue.TButton", background=[('active', '#3b3b4d')])
 
         # Button zum Absenden der Antwort
         self.submit_button = ttk.Button(frame, text="Submit", style="Blue.TButton", command=self.submit_response)
